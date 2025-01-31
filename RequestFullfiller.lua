@@ -156,21 +156,22 @@ function getIsCraftableCraftList(List)
     local craftingList = {}
     for k, v in pairs(List) do
         if v then 
-			print(v)
-			if ae2.isItemCraftable(v) then
+			-- print(v)
+			addToUIList(uiListToCraft, v)
+			--if ae2.isItemCraftable(v) then
 				-- print("craftable: ".. k .. " - " .. v.name)
-				table.insert(craftingList, v)
-				addToUIList(uiListToCraft, v)
-				basalt.debug("2. to craft: " .. v.name)
-			else
-				table.remove(List, k)
+				--table.insert(craftingList, v)
+				--addToUIList(uiListToCraft, v)
+				--basalt.debug("2. to craft: " .. v.name)
+			--else
+				--table.remove(List, k)
 				-- print("uncraftablte:" .. k .. " - " .. v.name)
-				table.insert(rejectedItems, v)
-				addToUIList(uiListFailedToCraft,v)
-				chatBox.sendToastToPlayer(v.name .. " is currently uncraftable!", "Uncraftable", "J_Buschkind", "&eAutoCrafter", "><", "&c&l")
+				--table.insert(rejectedItems, v)
+				--addToUIList(uiListFailedToCraft,v)
+				--chatBox.sendToastToPlayer(v.name .. " is currently uncraftable!", "Uncraftable", "J_Buschkind", "&eAutoCrafter", "><", "&c&l")
 				-- basalt.debug("uncraft: " .. v.name)
 				-- print(err)
-			end
+			--end
         end
     end
     return craftingList
@@ -226,7 +227,7 @@ end
 function autoCraftThreadTask()
     while checkAutoCraft:getValue() do
         basalt.debug("AutoCrafter Started")
-        chatBox.sendToastToPlayer("started Autocrafting Tasks", "AutoCraft", "StardustPhoenixx", "&eAutoCrafter", "><", "&c&l")
+        chatBox.sendToastToPlayer("started Autocrafting Tasks", "AutoCraft", "J_Buschkind", "&eAutoCrafter", "><", "&c&l")
         refreshAll()
         generateCraftList()
         craftAndPushItems(craftList)
