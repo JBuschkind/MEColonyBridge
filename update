@@ -1,4 +1,6 @@
 shell.run("rm","RequestFullfiller.lua")
 shell.run("rm","ItemPusher.lua")
+shell.run("rm","update")
+shell.run("wget","https://raw.githubusercontent.com/JBuschkind/MEColonyBridge/refs/heads/main/update")
 shell.run("wget","https://raw.githubusercontent.com/JBuschkind/MEColonyBridge/refs/heads/main/RequestFullfiller.lua")
 shell.run("wget","https://raw.githubusercontent.com/JBuschkind/MEColonyBridge/refs/heads/main/ItemPusher.lua")
