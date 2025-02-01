@@ -2,7 +2,7 @@
 local colonies = peripheral.wrap("bottom")
 local ae2 = peripheral.wrap("right")
 local chatBox = peripheral.wrap("back")
-local warehouse = peripheral.wrap("left")
+local warehouse = "left"
 local listRequest = colonies.getRequests()
 local toolMaterial = "stone"
 local armorMaterial = "leather"
@@ -86,7 +86,7 @@ function parseColonyRequests()
 			if itemData and itemData.count then
 				if (itemData.count > vrequest.count	) then	
 					--basalt.debug(ae2.getItem(itemList).name ..  ": ".. count .. "/" .. ae2.getItem(itemList).count .. " was stored and now pushed")  
-					ae2.exportItemToPeripheral(itemList, "right")
+					ae2.exportItemToPeripheral(itemList, warehouse)
 				else
 					table.insert(parsedList, itemList)
 					--addToUIList(uiListAllToCraftItems, itemList) 
