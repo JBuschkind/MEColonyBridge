@@ -222,7 +222,7 @@ function refreshAll()
     uiListFailedToCraft:clear()
     --print("refresh done")
     generateCraftList()
-	os.sleep(60)
+	os.sleep(15)
 	refreshAll()
 end
 function autoCraftThreadTask()
