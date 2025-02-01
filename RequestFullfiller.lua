@@ -124,6 +124,8 @@ function filterRequestList(list)
 end
 
 function parseColonyRequests()
+	while true do
+	listRequest = colonies.getRequests()
     local count = 0
     local name = ""
     local parsedList = {}
@@ -149,6 +151,8 @@ function parseColonyRequests()
 		end        
     end
     printCraftList(parsedList)
+	os.sleep(15)
+	end
     return parsedList
 end
 
