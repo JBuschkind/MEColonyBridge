@@ -1,7 +1,7 @@
 local basalt = require("basalt")
-local colonies = peripheral.wrap("bottom")
+local colonies = peripheral.wrap("back")
 local ae2 = peripheral.wrap("right")
-local chatBox = peripheral.wrap("back")
+local chatBox = peripheral.wrap("bottom")
 local toolMaterial = "stone"
 local armorMaterial = "chainmail"
 --UI Variables
