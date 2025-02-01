@@ -77,18 +77,20 @@ function parseColonyRequests()
         for kitem, vitem in pairs(vrequest.items) do
 			--basalt.debug(vitem.name)
 			--basalt.debug(vrequest.count)
-			print(vitem.name .. " " .. vrequest.count)
+			
 			local itemList = {}
 			itemList.name = vitem.name
 			itemList.count = vrequest.count		
 			local itemData = ae2.getItem(itemList)
 			--basalt.debug(itemData.count)
 			if itemData and itemData.count then
-				if (itemData.count > vrequest.count	) then	
-					--basalt.debug(ae2.getItem(itemList).name ..  ": ".. count .. "/" .. ae2.getItem(itemList).count .. " was stored and now pushed")  
+				if (itemData.count >= vrequest.count	) then	
+					--basalt.debug(ae2.getItem(itemList).name ..  ": ".. count .. "/" .. ae2.getItem(itemList).count .. " was stored and now pushed")
+					print("Exporting: " .. vitem.name .. " " .. vrequest.count)					
 					ae2.exportItemToPeripheral(itemList, warehouse)
 				else
 					table.insert(parsedList, itemList)
+					print("Missing: " .. vitem.name .. " " .. vrequest.count)
 					--addToUIList(uiListAllToCraftItems, itemList) 
 				end
 			end    
