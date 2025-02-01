@@ -212,7 +212,10 @@ function generateCraftList()
     craftList = {}
     craftList = parseColonyRequests()
     craftList = filterRequestList(craftList)
-    craftList = getIsCraftableCraftList(craftList) 
+    craftList = getIsCraftableCraftList(craftList)
+	basalt.debug("Sleep")
+	os.sleep(15)
+	generateCraftList()	
 end
 
 function refreshAll()
