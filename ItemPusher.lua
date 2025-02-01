@@ -89,7 +89,7 @@ function parseColonyRequests()
 					ae2.exportItemToPeripheral(itemList, "right")
 				else
 					table.insert(parsedList, itemList)
-					addToUIList(uiListAllToCraftItems, itemList) 
+					--addToUIList(uiListAllToCraftItems, itemList) 
 				end
 			end    
 		end        
