@@ -94,7 +94,7 @@ function parseColonyRequests()
 			end    
 		end        
     end
-    printCraftList(parsedList)
+    --printCraftList(parsedList)
     return parsedList
 end
 
