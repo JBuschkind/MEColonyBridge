@@ -84,7 +84,7 @@ function parseColonyRequests()
 			local itemData = ae2.getItem(itemList)
 			--basalt.debug(itemData.count)
 			if itemData and itemData.count then
-				if (itemData.count > count) then	
+				if (itemData.count > vrequest.count	) then	
 					--basalt.debug(ae2.getItem(itemList).name ..  ": ".. count .. "/" .. ae2.getItem(itemList).count .. " was stored and now pushed")  
 					ae2.exportItemToPeripheral(itemList, "right")
 				else
