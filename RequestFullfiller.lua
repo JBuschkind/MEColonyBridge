@@ -1,6 +1,6 @@
 local basalt = require("basalt")
-local colonies = peripheral.wrap("top")
-local ae2 = peripheral.wrap("bottom")
+local colonies = peripheral.wrap("bottom")
+local ae2 = peripheral.wrap("right")
 local chatBox = peripheral.wrap("back")
 local toolMaterial = "stone"
 local armorMaterial = "chainmail"
@@ -140,7 +140,7 @@ function parseColonyRequests()
 			if itemData and itemData.count then
 				if (itemData.count > count) then	
 					basalt.debug(ae2.getItem(itemList).name ..  ": ".. count .. "/" .. ae2.getItem(itemList).count .. " was stored and now pushed")  
-					ae2.exportItemToPeripheral(itemList, "right")
+					ae2.exportItemToPeripheral(itemList, "left")
 				else
 					table.insert(parsedList, itemList)
 					addToUIList(uiListAllToCraftItems, itemList) 
